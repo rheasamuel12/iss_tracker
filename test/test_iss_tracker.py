@@ -64,6 +64,3 @@ def test_speed_route(sample_epoch):
 
 if __name__ == '__main__':
     pytest.main()
-
-
-
