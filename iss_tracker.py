@@ -123,6 +123,12 @@ def current():
     y = float(closest_timestamp_data['Y']['#text'])
     z = float(closest_timestamp_data['Z']['#text'])
 
+    x_dot = float(closest_timestamp_data['X_DOT']['#text'])
+    y_dot = float(closest_timestamp_data['Y_DOT']['#text'])
+    z_dot = float(closest_timestamp_data['Z_DOT']['#text'])
+    speed = math.sqrt(x_dot**2 + y_dot**2 + z_dot**2)
+
+
     epoch_string = closest_timestamp_data['EPOCH']
     epoch_datetime = datetime.strptime(epoch_string, "%Y-%jT%H:%M:%S.%fZ")
     hrs = epoch_datetime.hour
@@ -149,7 +155,8 @@ def current():
         "latitude": lat,
         "longitude": lon,
         "altitude": alt,
-        "geoposition": geoloc
+        "geoposition": geoloc,
+        "speed": speed
     }
 
     return loc
@@ -251,3 +258,5 @@ def inst_speed(epoch):
 
 if __name__ == "__main__":
     app.run(debug=True, host='0.0.0.0')
+
+
