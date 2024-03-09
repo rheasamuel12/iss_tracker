@@ -99,7 +99,7 @@ Returns ‘metadata’ dict object from ISS data
 ### Unit Testing
 To run the unit tests, simply type:
 
-`pytest iss_tracker.py` 
+`pytest test/test_iss_tracker.py` 
 
 in the terminal.
 
